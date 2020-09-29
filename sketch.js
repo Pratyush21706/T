@@ -2,13 +2,16 @@
 var a =1,i,i2,code;
   let  button2
     var y = 0
-var x = 1;
+var x = 1,e,f;
 var uN;
 var msg;
 var b = 0;
 var rcb;
 var bc;
-var uN1
+var uN1,val,rnm;
+var div1,div2,div3,div4,rcp,rc,rcd,cpl,roomName,enterbutton,yes = false;
+var ms;
+var variable= `Hi`;
 function preload(){
 homebg = loadImage("new.png")
 }
@@ -47,11 +50,14 @@ function setup(){
          i2 = Math.round(random(0,25))
  code = alphabets[i]+Math.round(random(10,90))+alphabets[i2]+Math.round(random(0,9))
  chatbox = createDiv().addClass(`cbx`);
+    
+         
 }
 createR = function(){
  
 
     if(a===1){
+        yes = true;
         div1 = createDiv('')
         div1.addClass(`bgdiv`);
         div1.position(0,0);
@@ -70,17 +76,40 @@ createR = function(){
         cpl = createImg(`cpl.png`,`Successful`);
         cpl.position(width/3.5,height/3.7);
         cpl.addClass(`cpl`)
-            roomName = createInput(``).attribute(`placeholder`,`Give your room a cool Name`)
+            roomName = createInput(``).attribute(`placeholder`,` Paste the room code here`)
        roomName.position(width/7.75,height/1.6)
         roomName.addClass('name')
         
         enterbutton = createButton(`Go`);
     enterbutton.addClass(`enter`);
     enterbutton.position(width/1.18,height/1.45)
-    enterbutton.mousePressed(banao)
+    enterbutton.mousePressed(check1)
         
          chatbox = createDiv().addClass(`cbx`);
     chatbox.position(15,-999)
+        
+             div3 = createDiv('')
+        div3.addClass(`header`);
+        div3.position(0,0);
+    
+     div3 = createDiv('')
+        div3.addClass(`footer`);
+        div3.position(0,-45678);
+    
+    div4 = createDiv('')
+        div4.addClass(`bg`);
+        div4.position(window.innerWidth/1.135,-5555);
+    
+//    chatbox.position(5,window.innerHeight/10.2)
+      msg = createInput(``).attribute(`placeholder`,`Type something`)
+       msg.position(10,-55555)
+        msg.addClass('text')
+        x = 2;
+
+     button2 = createButton(``);
+    button2.position(window.innerWidth/1.14,div4.y+5)
+            button2.attribute('disabled', '');
+                         button2.addClass(`44224`);
     }
 }
 function banao(){
@@ -88,13 +117,7 @@ function banao(){
     if(a===2){
 
 console.log(code)
-        let name = roomName.value();
-       var data ={
-           Name  : name,
-           Code : code
-}
-database.ref(code).push(data,finished);
-  console.log("send called");
+
     }
 }
 function finished(error) {
@@ -103,7 +126,7 @@ function finished(error) {
      
   } else {
 //           alert(`Room Created Successfully`)        
-       startChat();
+       
   }
 }
 
@@ -160,53 +183,46 @@ function startChat1(){
     background("black")
       var refo = database.ref(rcb);
 refo.on("value", abcData, errData);
-
-//           div1.position(232,-3456789);
-//        div.position(width/20,-3456734567)
-//        rcp.position(width/3.83,-3456734567)
-//        cpl.position(width/3.5,-3456734567);
-//       roomName.position(width/7.75,-3456734567)
-//    enterbutton.position(width/1.18,-3456734567)
+//    msg.value()="ram";
+if(yes){
+           div1.position(232,-3456789);
+        div.position(width/20,-3456734567)
+        rcp.position(width/3.83,-3456734567)
+        cpl.position(width/3.5,-3456734567);
+       roomName.position(width/7.75,-3456734567)
+    enterbutton.position(width/1.18,-3456734567)
+      rc.position(width/3.83,-3456734567)
+          rcd.position(width/10,0);
+}
     button.position(8380,-3334)
     input1.position(8380,-3334)
-//          rc.position(width/3.83,-3456734567)
-//          rcd.position(width/3.83,-3456734567)
-     div3 = createDiv('')
-        div3.addClass(`header`);
-        div3.position(0,0);
-    
-     div3 = createDiv('')
-        div3.addClass(`footer`);
-        div3.position(0,window.innerHeight/1.1);
-    
-    div4 = createDiv('')
-        div4.addClass(`bg`);
+                div3.position(0,window.innerHeight/1.1);
         div4.position(window.innerWidth/1.135,window.innerHeight/1.085);
-    
-//    chatbox.position(5,window.innerHeight/10.2)
-      msg = createInput(``).attribute(`placeholder`,`Type something`)
-       msg.position(10,div4.y)
-        msg.addClass('text')
-        x = 2;
+ msg.position(10,div4.y)
+ button2.position(window.innerWidth/1.14,div4.y+5)
 
-     button2 = createButton(``);
-    button2.position(div4.x+5,div4.y+5)
-            button2.attribute('disabled', '');
-                         button2.addClass(`44224`);
-
-//    let nme = roomName.value();
-//    groupName = createP(nme);
-//    groupName.position(width/20,0)
-//    groupName.addClass(`p3`)
+    if(yes){
+            let nme = roomName.value();
+    groupName = createP(nme);
+        groupName.position(window.innerWidth/8,-16)
+    groupName.addClass(`p2`)
     button2.mousePressed(addText1)
-   
+            groupName.style(`color`,`white`)
+}
+if (yes===false){
+//    let nme = input1.value();
+    groupName = createP(rnm);
+    groupName.position(window.innerWidth/8,-16)
+    groupName.addClass(`p2`)
+    button2.mousePressed(addText1)
+    groupName.style(`color`,`white`)
+}
 
 
 }
 function draw(){
     if(frameCount%1===0){
         b = 0;
-        
     }
     if(x===2){
     let mmsg = msg.value().length;
@@ -238,12 +254,36 @@ check = function(){
 refe.on("value", gotData, errData);
     
 }
+check1 = function(){
+    rcb = code;
+        console.log(rcb);
+  var refe = database.ref(rcb);
+refe.on("value", gotData, errData);
+     var data ={
+           Code : code,  
+         Name : roomName.value()
+}
+database.ref(code).push(data,finished);
+  console.log("send called");
+}
+function gtData(data){
+  let info = data.val();
+var keys = Object.keys(info)
+var k = keys[0]
+ bc= info[k].Code;
+    
+    console.log("Code returned: "+bc)
+    if(bc==rcb){
+    startChat();
+    }
+}
 function gotData(data){
   let info = data.val();
 var keys = Object.keys(info)
 var k = keys[0]
  bc= info[k].Code;
-    console.log("Code returned: "+bc)
+    rnm = info[k].Name;
+//    console.log("Code returned: "+rmm)
     if(bc==rcb){
     startChat1();
     }
@@ -251,29 +291,18 @@ var k = keys[0]
 
 addText1 = function(){
 
-    let val = msg.value();  
+     ms = msg.value();  
           var message ={
-msg: val
+msg: ms
 }
+          console.log(ms);
 database.ref(rcb).push(message,finished);
     
      var refo = database.ref(rcb);
 refo.on("value", abcData, errData);
 
 }
-addText = function(){
 
-    let val = msg.value();  
-    
-      var message ={
-msg: val
-}
-database.ref(code).push(message,finished);
-    
-     var ref = database.ref(code);
-ref.on("value", askData, errData);
-
-}
 function askData(data){
     b++
   let info = data.val();
@@ -281,21 +310,26 @@ var keys = Object.keys(info)
 for(let i =1; i<keys.length; i++){
 var k = keys[i]
 }
+    console.log("i am ask")
 uN = info[k].msg;
 //        console.log(data)
    if(b===2){
         recivedText1();
    }
-    console.log(b)
+    console.log(ms)
+   if(uN==variable){
+console.log("jflshdfhsdjkfhsdkfhskdfhskdfhsdkjfhsdkjfdsadasdasdasd")
+   }
+            console.log("Message: "+uN+"ui: "+variable)
    
-            console.log("Message: "+uN)
-    
 }
+
 //n20c6
 function abcData(data){
 //         y++
 //    console.log(y)
-    console.log("hishj")
+        console.log("i am abc")
+
   let info = data.val();
 var keys = Object.keys(info)
 for(let i =1; i<keys.length; i++){
@@ -305,14 +339,20 @@ uN1 = info[k].msg;
 //        console.log(data)
 //    if(b==1){
         console.log(b)
-
-       
-   
      b++
+    if(uN1==ms){
  if(b===2){
         recivedText1();
+                 console.log("aapna")
+
    }
-            console.log("Message1: "+uN1)
+    }else{
+        if(b===2){
+               recivedText1b(); 
+            console.log("aapna")
+        }
+    }
+            console.log("Message1: "+uN1+" ui: "+val)
     
 }
 recivedText = function(){
@@ -327,7 +367,7 @@ recivedText = function(){
 }
 
 recivedText1 = function(){
-
+ 
       para2 = createP(uN1);
        para2.parent("txtScreen");
     let objDiv = document.getElementById("txtScreen");
@@ -340,6 +380,22 @@ function errData(err){
 console.log("error: "+err)
     console.log("dljdjwkdwkhdkw")
 }
+
+recivedText1b = function(){
+
+      para2 = createP(uN1);
+       para2.parent("txtScreen");
+    let objDiv = document.getElementById("txtScreen");
+    objDiv.scrollTop = objDiv.scrollHeight;
+    
+ para2.addClass(`msg_r`);
+   
+}
+function errData(err){
+console.log("error: "+err)
+    console.log("dljdjwkdwkhdkw")
+}
+
 
 
 
