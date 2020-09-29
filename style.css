@@ -19,6 +19,8 @@ canvas {
     height: 9%;
    border-radius: 15px;
     font-size: 25px;
+    min-width: 50px;
+  min-height: 58px
 }
 .host:hover{
     background-color: #1DBFC1;
@@ -34,7 +36,8 @@ canvas {
     outline: 0px;
         font-size: 25px;
         color: #FF4200;
-
+   min-width: 50px;
+  min-height: 52px
 }
 
 .join:hover{
@@ -119,7 +122,10 @@ font-weight: 200;
     background-color: white;
     width : 100%;
         height : 9%;
-            border-radius: 0%
+            border-radius: 0%;
+                position : fixed;
+        position: static;
+
 }
 .footer{
     background-color: white;
@@ -141,35 +147,90 @@ font-weight: 200;
 }
 
 .text::placeholder{
-    color : black
+  color: #727272;
+
 }
 .message{
 /*       content : `Helo`;*/
     width  :8%;
     height : 4.5%;
     border : 0px;
+    outline: 0px;
     border-radius: 0px;
     background: url(send.png);
-    background-size: 100%;      
+    background-size: 100%;   
 }
 .bg{
     width : 9%;
     height: 6%;
         background-color: #f2f2f2;
     border-radius: 40px;
-}
-.sent{
-    width:50%;
-    height : 20%;
-    border:0px;
-    outline:0px;
-    border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: #6495ed;
-        font-size: 20px;
+} 
+.msg{
+    background-color: #00A2FF;
     color:white;
-    margin-top: 2px;
-        margin-left: 2px;
+    width :fit-content;
+/*    background-size: cover; */
+/*    border : 5px solid black;
+    */
+    margin-left: 10px;
+/*    border-bottom-left-radius: 15px;*/
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+padding : 5px;
+    max-width:70%;
+       word-wrap: break-word;
+    font-family: sans-serif;
+}
+.cbx{
+    width:92%;
+    height: 78%;
+/*    background-color: transparent;*/
+    background-color: aqua;
+/*    overflow:scroll;*/
+    position: static;
+    align-self: center;
+}
 
+.divBox{
+/*    margin-left: px;*/
+    margin-top: 65px;
+    background-color: transparent;
+/*    width :;*/
+    height:510px;
+    overflow: scroll;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.dis{
+      width  :8%;
+    height : 4.5%;
+    border : 0px;
+    outline: 0px;
+    border-radius: 0px;
+    background: url(send.png);
+    background-size: 100%;
+    opacity : 20%;
+}
+.msg_r{
+/*    text-align: right;*/
+/*     position: absolute;*/
+    background-color: #c9c7c7;
+    color:black;
+    width :fit-content;
+/*    background-size: cover; */
+/*    border : 5px solid black;
+    */
+    margin-left: 430px;
+/*    border-bottom-left-radius: 15px;*/
+        border-bottom-right-radius: 5px;
+        border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+padding : 5px;
+    max-width:70%;
+       word-wrap: break-word;
+    font-family: sans-serif;
 }
