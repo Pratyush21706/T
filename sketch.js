@@ -51,6 +51,9 @@ function setup(){
  code = alphabets[i]+Math.round(random(10,90))+alphabets[i2]+Math.round(random(0,9))
  chatbox = createDiv().addClass(`cbx`);
     
+    bg = createImg(`bg.png`,`background`);
+ bg.addClass(`bbgg`)
+    bg.position(0,-4567890);
          
 }
 createR = function(){
@@ -71,14 +74,14 @@ createR = function(){
         rc.position(width/2.5,height/1.9)
         rc.addClass(`p1`)
                  rcd = createP(code);
-        rcd.position(width/3.83,height/1.91)
+        rcd.position(width/3.83,height/1.98)
         rcd.addClass(`p2`)
         cpl = createImg(`cpl.png`,`Successful`);
         cpl.position(width/3.5,height/3.7);
         cpl.addClass(`cpl`)
-            roomName = createInput(``).attribute(`placeholder`,` Paste the room code here`)
+            roomName = createInput(``).attribute(`placeholder`,` Give your room a cool name`)
        roomName.position(width/7.75,height/1.6)
-        roomName.addClass('name')
+        roomName.addClass('ip')
         
         enterbutton = createButton(`Go`);
     enterbutton.addClass(`enter`);
@@ -88,28 +91,6 @@ createR = function(){
          chatbox = createDiv().addClass(`cbx`);
     chatbox.position(15,-999)
         
-             div3 = createDiv('')
-        div3.addClass(`header`);
-        div3.position(0,0);
-    
-     div3 = createDiv('')
-        div3.addClass(`footer`);
-        div3.position(0,-45678);
-    
-    div4 = createDiv('')
-        div4.addClass(`bg`);
-        div4.position(window.innerWidth/1.135,-5555);
-    
-//    chatbox.position(5,window.innerHeight/10.2)
-      msg = createInput(``).attribute(`placeholder`,`Type something`)
-       msg.position(10,-55555)
-        msg.addClass('text')
-        x = 2;
-
-     button2 = createButton(``);
-    button2.position(window.innerWidth/1.14,div4.y+5)
-            button2.attribute('disabled', '');
-                         button2.addClass(`44224`);
     }
 }
 function banao(){
@@ -130,56 +111,12 @@ function finished(error) {
   }
 }
 
-function startChat(){
- resizeCanvas(0,0);
-    background("black")
-    
-     var ref = database.ref(code);
-ref.on("value", askData, errData);
-           div1.position(232,-3456789);
-        div.position(width/20,-3456734567)
-        rcp.position(width/3.83,-3456734567)
-        cpl.position(width/3.5,-3456734567);
-       roomName.position(width/7.75,-3456734567)
-    enterbutton.position(width/1.18,-3456734567)
-    button.position(8380,-3334)
-    input1.position(8380,-3334)
-          rc.position(width/3.83,-3456734567)
-          rcd.position(width/3.83,-3456734567)
-     div3 = createDiv('')
-        div3.addClass(`header`);
-        div3.position(0,0);
-    
-     div3 = createDiv('')
-        div3.addClass(`footer`);
-        div3.position(0,window.innerHeight/1.1);
-    
-    div4 = createDiv('')
-        div4.addClass(`bg`);
-        div4.position(window.innerWidth/1.135,window.innerHeight/1.085);
-    
-//    chatbox.position(5,window.innerHeight/10.2)
-      msg = createInput(``).attribute(`placeholder`,`Type something`)
-       msg.position(10,div4.y)
-        msg.addClass('text')
-        x = 2;
 
-     button2 = createButton(``);
-    button2.position(div4.x+5,div4.y+5)
-            button2.attribute('disabled', '');
-                         button2.addClass(`44224`);
-
-    let nme = roomName.value();
-    groupName = createP(nme);
-    groupName.position(width/20,0)
-    groupName.addClass(`p3`)
-    button2.mousePressed(addText)
-   
-
-
-}
 function startChat1(){
  resizeCanvas(0,0);
+     
+        bg.position(0,0);
+       
     background("black")
       var refo = database.ref(rcb);
 refo.on("value", abcData, errData);
@@ -192,35 +129,160 @@ if(yes){
        roomName.position(width/7.75,-3456734567)
     enterbutton.position(width/1.18,-3456734567)
       rc.position(width/3.83,-3456734567)
-          rcd.position(width/10,0);
+          rcd.position(width/10,-555);
 }
     button.position(8380,-3334)
     input1.position(8380,-3334)
-                div3.position(0,window.innerHeight/1.1);
-        div4.position(window.innerWidth/1.135,window.innerHeight/1.085);
- msg.position(10,div4.y)
- button2.position(window.innerWidth/1.14,div4.y+5)
+               
+             div3 = createDiv('')
+        div3.addClass(`header`);
+        div3.position(0,0);
+    
+     div5 = createDiv('')
+        div5.addClass(`footer`);
+        div5.position(0,window.innerHeight/1.085);
+    
+    div4 = createDiv('')
+        div4.addClass(`bg`);
+        div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
+    
+//    chatbox.position(5,window.innerHeight/10.2)
+      msg = createInput(``).attribute(`placeholder`,`  Type your message here`)
+       msg.position(10,window.innerHeight/1.075)
+        msg.addClass('text')
+        x = 2;
+
+     button2 = createButton(``);
+    button2.position(window.innerWidth/1.12,div4.y+5)
+            button2.attribute('disabled', '');
+   
+                         button2.addClass(`44224`);
+    backButton  = createButton(`< Back`);
+       backButton .position(window.innerWidth/30,15);
+    backButton.addClass(`back`)
+    backButton.style(` background`,` #fff`)
+        backButton.style(` font-size`,`30px`)
+         backButton.style(`color`, `#34B7F1`)
+         backButton.style(`outline`, `0px`);
+         backButton.style(`border`, `none`);
+      backButton.style(`margin-top`,` 3px`)
+
+     if(keyIsDown(ENTER)){
+    console.log("hhhh");
+    addText1();
+}
 
     if(yes){
             let nme = roomName.value();
     groupName = createP(nme);
-        groupName.position(window.innerWidth/8,-16)
-    groupName.addClass(`p2`)
+//        groupName.position(window.innerWidth/3,-8    font-: sans-serif;
+
+    groupName.addClass(`pp`)
+        groupName.style(`font-size`,`20px`);
+                groupName.style(`font-weight`,`550`);
+                        groupName.style(`font-family`,`sans-serif`);
+
+
+    if(roomName.value().length>0&&roomName.value().length<6){
+        console.log("pA")
+              groupName.position(window.innerWidth/2.5,-8)
+    }
+         if(roomName.value().length>=6&&roomName.value().length<8){
+        console.log("pB")
+              groupName.position(window.innerWidth/2.7,-8)
+    }
+    if(roomName.value().length>=8&&roomName.value().length<10){
+        console.log("pc")
+              groupName.position(window.innerWidth/2.9,-8)
+    }
+        if(roomName.value().length>=10&&roomName.value().length<12){
+        console.log("pD")
+              groupName.position(window.innerWidth/3.15,-8)
+    }
+         if(roomName.value().length>=12&&roomName.value().length<15){
+        console.log("pE")
+              groupName.position(window.innerWidth/3.45,-8)
+    }
+        
+        if(roomName.value().length==15){
+        console.log("pf")
+              groupName.position(window.innerWidth/3.9,-8)
+    }
     button2.mousePressed(addText1)
-            groupName.style(`color`,`white`)
+            groupName.style(`color`,`black`)
+             groupcode = createP("Your room code is: "+code);
+            if(roomName.value().length>0&&roomName.value().length<6){
+        console.log("pA")
+              groupName.position(window.innerWidth/2.5,-8)
+    }
+         if(roomName.value().length>=6&&roomName.value().length<8){
+        console.log("pB")
+              groupName.position(window.innerWidth/2.7,-8)
+    }
+    if(roomName.value().length>=8&&roomName.value().length<10){
+        console.log("pc")
+              groupName.position(window.innerWidth/2.9,-8)
+    }
+        if(roomName.value().length>=10&&roomName.value().length<12){
+        console.log("pD")
+              groupName.position(window.innerWidth/3.15,-8)
+    }
+         if(roomName.value().length>=12&&roomName.value().length<15){
+        console.log("pE")
+              groupName.position(window.innerWidth/3.45,-8)
+    }
+        
+        if(roomName.value().length==15){
+        console.log("pf")
+              groupName.position(window.innerWidth/3.9,-8)
+    }
+    groupcode.position(window.innerWidth/3.5,18)
+    groupcode.addClass(`pp01`)
+    groupcode.style(`color`,`blavk`)
+      
 }
 if (yes===false){
 //    let nme = input1.value();
     groupName = createP(rnm);
-    groupName.position(window.innerWidth/8,-16)
-    groupName.addClass(`p2`)
+    groupName.position(window.innerWidth/3,-10)
+    groupName.addClass(`pp`)
     button2.mousePressed(addText1)
-    groupName.style(`color`,`white`)
+    groupName.style(`color`,`black`)
+     groupcode = createP("Your room code is: "+rcb);
+    groupcode.position(window.innerWidth/3.5,18)
+    groupcode.addClass(`pp01`)
+    groupcode.style(`color`,`blavk`)
+    groupName.addClass(`pp`)
+        groupName.style(`font-size`,`20px`);
+                groupName.style(`font-weight`,`550`);
+                        groupName.style(`font-family`,`sans-serif`);
+    if(roomName.value().length>0&&roomName.value().length<6){
+        console.log("pA")
+              groupName.position(window.innerWidth/2.5,-8)
+    }
+         if(roomName.value().length>=6&&roomName.value().length<8){
+        console.log("pB")
+              groupName.position(window.innerWidth/2.7,-8)
+    }
+    if(roomName.value().length>=8&&roomName.value().length<10){
+        console.log("pc")
+              groupName.position(window.innerWidth/2.9,-8)
+    }
+        if(roomName.value().length>=10&&roomName.value().length<12){
+        console.log("pD")
+              groupName.position(window.innerWidth/3.15,-8)
+    }
+         if(roomName.value().length>=12&&roomName.value().length<15){
+        console.log("pE")
+              groupName.position(window.innerWidth/3.45,-8)
+    }
+        
 }
 
 
 }
 function draw(){
+   
     if(frameCount%1===0){
         b = 0;
     }
