@@ -171,20 +171,23 @@ text:focus{
 }
 .message{
 /*       content : `Helo`;*/
-    width  :8%;
-    height : 4.5%;
+    width  :40px;
+    height : 30px;
     border : 0px;
     outline: 0px;
-    border-radius: 0px;
+    border-radius: 1000px;
     background: url(send.png);
     background-size: 100%;   
+    margin-top: 4px;
+    margin-left: 5px;
 }
 .bg{
-    width : 9%;
-    height: 6%;
+    width : 45px;
+    height: 40px;
         background-color: #f2f2f2;
     border-radius: 40px;
     margin-left: 5px;
+    margin-top: 1px;
 } 
 .msg{
     background-color: #00A2FF;
