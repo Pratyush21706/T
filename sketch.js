@@ -9,6 +9,7 @@ var b = 0;
 var rcb;
 var bc;
 var uN1,val,rnm;
+var p=1;
 var div1,div2,div3,div4,rcp,rc,rcd,cpl,roomName,enterbutton,yes = false;
 var ms;
 var variable= `Hi`;
@@ -139,7 +140,7 @@ function finished(error) {
 
 function startChat1(){
  resizeCanvas(0,0);
-     
+     p++
         bg.position(0,0);
        
     background("black")
@@ -167,13 +168,13 @@ if(yes){
   div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
     
 //    chatbox.position(5,window.innerHeight/10.2)
-      
+      if(p===2){
        msg.position(10,window.innerHeight/1.075)
        
         x = 2;
 
     button2.position(window.innerWidth/1.12,div4.y+5)
-   
+      }
                          button2.addClass(`44224`);
     backButton  = createButton(`< Back`);
        backButton .position(window.innerWidth/30,15);
