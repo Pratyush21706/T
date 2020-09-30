@@ -163,14 +163,14 @@ if(yes){
              
         div3.position(0,0);
     
-        div5.position(0,window.innerHeight/1.085);
-    
-  div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
+       
     
 //    chatbox.position(5,window.innerHeight/10.2)
       if(p===2){
        msg.position(10,window.innerHeight/1.075)
-       
+        div5.position(0,window.innerHeight/1.085);
+    
+  div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
         x = 2;
 
     button2.position(window.innerWidth/1.12,div4.y+5)
