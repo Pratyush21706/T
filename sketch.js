@@ -9,7 +9,7 @@ var b = 0;
 var rcb;
 var bc;
 var uN1,val,rnm;
-var p=1;
+var work = 0;
 var div1,div2,div3,div4,rcp,rc,rcd,cpl,roomName,enterbutton,yes = false;
 var ms;
 var variable= `Hi`;
@@ -56,7 +56,7 @@ function setup(){
  bg.addClass(`bbgg`)
     bg.position(0,-4567890);
     
-    div3 = createDiv('')
+      div3 = createDiv('')
         div3.addClass(`header`);
     div3.position(22,-4444)
  
@@ -76,6 +76,7 @@ function setup(){
      button2 = createButton(``);
             button2.attribute('disabled', '');
     button2.position(0,-4567);
+         
 }
 createR = function(){
  
@@ -112,11 +113,6 @@ createR = function(){
          chatbox = createDiv().addClass(`cbx`);
     chatbox.position(15,-999)
         
-        div3 = createDiv('')
-        div3.addClass(`header`);
-        
-       
-        
     }
 }
 function banao(){
@@ -140,7 +136,7 @@ function finished(error) {
 
 function startChat1(){
  resizeCanvas(0,0);
-     p++
+     work++;
         bg.position(0,0);
        
     background("black")
@@ -159,15 +155,11 @@ if(yes){
 }
     button.position(8380,-3334)
     input1.position(8380,-3334)
-               
-             
-       
-    
-//  div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
-    
-//    chatbox.position(5,window.innerHeight/10.2)
-      if(p===2){
-        div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
+         
+    console.log(work)
+       if(work==13){ 
+console.log("djlkasjdlaksjdakls")
+           div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
            div3.position(0,0);
     
         div5.position(0,window.innerHeight/1.085);
@@ -175,8 +167,7 @@ if(yes){
 
     button2.position(window.innerWidth/1.12,div4.y+5)
                  msg.position(10,window.innerHeight/1.075)
-
-      }
+               }
                          button2.addClass(`44224`);
     backButton  = createButton(`< Back`);
        backButton .position(window.innerWidth/30,15);
@@ -358,6 +349,7 @@ var k = keys[0]
     console.log("Code returned: "+bc)
     if(bc==rcb){
     startChat();
+        
     }
 }
 function gotData(data){
@@ -369,6 +361,7 @@ var k = keys[0]
 //    console.log("Code returned: "+rmm)
     if(bc==rcb){
     startChat1();
+       
     }
 }
 
@@ -478,7 +471,6 @@ function errData(err){
 console.log("error: "+err)
     console.log("dljdjwkdwkhdkw")
 }
-
 
 
 
