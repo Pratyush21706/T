@@ -54,7 +54,27 @@ function setup(){
     bg = createImg(`bg.png`,`background`);
  bg.addClass(`bbgg`)
     bg.position(0,-4567890);
-         
+    
+    div3 = createDiv('')
+        div3.addClass(`header`);
+    div3.position(22,-4444)
+ 
+     div5 = createDiv('')
+        div5.addClass(`footer`);
+    div5.position(0,-123456789)
+    
+      div4 = createDiv('')
+        div4.addClass(`bg`);
+        div4.position(0,-34567)
+        
+        msg = createInput(``).attribute(`placeholder`,`  Type your message here`)
+ msg.addClass('text')
+        msg.position(232,-45678);
+    
+    
+     button2 = createButton(``);
+            button2.attribute('disabled', '');
+    button2.position(0,-4567);
 }
 createR = function(){
  
@@ -90,6 +110,11 @@ createR = function(){
         
          chatbox = createDiv().addClass(`cbx`);
     chatbox.position(15,-999)
+        
+        div3 = createDiv('')
+        div3.addClass(`header`);
+        
+       
         
     }
 }
@@ -134,27 +159,20 @@ if(yes){
     button.position(8380,-3334)
     input1.position(8380,-3334)
                
-             div3 = createDiv('')
-        div3.addClass(`header`);
+             
         div3.position(0,0);
     
-     div5 = createDiv('')
-        div5.addClass(`footer`);
         div5.position(0,window.innerHeight/1.085);
     
-    div4 = createDiv('')
-        div4.addClass(`bg`);
-        div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
+  div4.position(window.innerWidth/1.135,window.innerHeight/1.08);
     
 //    chatbox.position(5,window.innerHeight/10.2)
-      msg = createInput(``).attribute(`placeholder`,`  Type your message here`)
+      
        msg.position(10,window.innerHeight/1.075)
-        msg.addClass('text')
+       
         x = 2;
 
-     button2 = createButton(``);
     button2.position(window.innerWidth/1.12,div4.y+5)
-            button2.attribute('disabled', '');
    
                          button2.addClass(`44224`);
     backButton  = createButton(`< Back`);
