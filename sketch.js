@@ -8,6 +8,7 @@ var msg;
 var b = 0;
 var rcb;
 var bc;
+var p = 1;
 var uN1,val,rnm;
 var div1,div2,div3,div4,rcp,rc,rcd,cpl,roomName,enterbutton,yes = false;
 var ms;
@@ -134,6 +135,7 @@ if(yes){
     button.position(8380,-3334)
     input1.position(8380,-3334)
                
+    if(p===1){
              div3 = createDiv('')
         div3.addClass(`header`);
         div3.position(0,0);
@@ -157,6 +159,7 @@ if(yes){
             button2.attribute('disabled', '');
    
                          button2.addClass(`44224`);
+    }
     backButton  = createButton(`< Back`);
        backButton .position(window.innerWidth/30,15);
     backButton.addClass(`back`)
@@ -352,7 +355,7 @@ var k = keys[0]
 }
 
 addText1 = function(){
-
+p =2;
      ms = msg.value();  
           var message ={
 msg: ms
@@ -457,5 +460,6 @@ function errData(err){
 console.log("error: "+err)
     console.log("dljdjwkdwkhdkw")
 }
+
 
 
