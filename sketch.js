@@ -15,6 +15,7 @@ var ms;
 var variable= `Hi`;
 function preload(){
 homebg = loadImage("new.png")
+    bg2 = loadImage("bg2.png");
 }
 function setup(){
  let canvas;
@@ -52,9 +53,7 @@ function setup(){
  code = alphabets[i]+Math.round(random(10,90))+alphabets[i2]+Math.round(random(0,9))
  chatbox = createDiv().addClass(`cbx`);
     
-    bg = createImg(`bg.png`,`background`);
- bg.addClass(`bbgg`)
-    bg.position(0,-4567890);
+    
          
 }
 createR = function(){
@@ -62,31 +61,19 @@ createR = function(){
 
     if(a===1){
         yes = true;
-        div1 = createDiv('')
-        div1.addClass(`bgdiv`);
-        div1.position(0,0);
-        div = createDiv('')
-        div.addClass(`popup`)
-        div.position(width/20,height/4)
-        rcp = createP('Room has been successfully created')
-        rcp.position(width/9,height/2.1)
-        rcp.addClass(`p1`)
-         rc = createP('is your room code')
-        rc.position(width/2.5,height/1.9)
-        rc.addClass(`p1`)
+       background(bg2)
                  rcd = createP(code);
-        rcd.position(width/3.83,height/1.98)
+        rcd.position(width/3.83,height/1.95)
         rcd.addClass(`p2`)
-        cpl = createImg(`cpl.png`,`Successful`);
-        cpl.position(width/3.5,height/3.7);
-        cpl.addClass(`cpl`)
+       
             roomName = createInput(``).attribute(`placeholder`,` Give your room a cool name`)
        roomName.position(width/7.75,height/1.6)
         roomName.addClass('ip')
-        
+         button.position(8380,-3334)
+    input1.position(8380,-3334)
         enterbutton = createButton(`Go`);
     enterbutton.addClass(`enter`);
-    enterbutton.position(width/1.18,height/1.45)
+    enterbutton.position(width/1.18,height/1.48)
     enterbutton.mousePressed(check1)
         
          chatbox = createDiv().addClass(`cbx`);
@@ -116,26 +103,22 @@ function finished(error) {
 function startChat1(){
  resizeCanvas(0,0);
      
-        bg.position(0,0);
-       
+
     background("black")
       var refo = database.ref(rcb);
 refo.on("value", abcData, errData);
 //    msg.value()="ram";
 if(yes){
-           div1.position(232,-3456789);
-        div.position(width/20,-3456734567)
-        rcp.position(width/3.83,-3456734567)
-        cpl.position(width/3.5,-3456734567);
+    
        roomName.position(width/7.75,-3456734567)
     enterbutton.position(width/1.18,-3456734567)
-      rc.position(width/3.83,-3456734567)
           rcd.position(width/10,-555);
 }
     button.position(8380,-3334)
     input1.position(8380,-3334)
                
     if(p===1){
+        console.log(p+"jwidjwdjwld")
              div3 = createDiv('')
         div3.addClass(`header`);
         div3.position(0,0);
@@ -169,6 +152,7 @@ if(yes){
          backButton.style(`outline`, `0px`);
          backButton.style(`border`, `none`);
       backButton.style(`margin-top`,` 3px`)
+    backButton.mousePressed(back);
 
      if(keyIsDown(ENTER)){
     console.log("hhhh");
@@ -460,6 +444,23 @@ function errData(err){
 console.log("error: "+err)
     console.log("dljdjwkdwkhdkw")
 }
-
+function back(){
+    resizeCanvas(window.innerWidth,window.innerHeight)
+    background(homebg)
+div3.position(7,-45678);
+    div4.position(7,-45678);
+div5.position(7,-45678);
+button2.position(494,-555)
+    msg.position(33,-663)
+    backButton.position(43,-567)
+     button.position(width/22,height/1.255)
+ input1.position(width/1.975,height/1.255)
+    groupName.position(3,-89)
+        groupcode.position(3,-89)
+b=1;
+p = 1;
+    a =1;
+    x = 1;
+}
 
 
